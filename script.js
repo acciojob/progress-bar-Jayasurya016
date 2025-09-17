@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentActive > circles.length) {
       currentActive = circles.length;
     }
-
     update();
   });
 
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentActive < 1) {
       currentActive = 1;
     }
-
     update();
   });
 
@@ -39,12 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
     progress.style.width =
       ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
 
+    // Button state logic
     if (currentActive === 1) {
       prev.disabled = true;
-    } else if (currentActive === circles.length) {
-      next.disabled = true;
     } else {
       prev.disabled = false;
+    }
+
+    if (currentActive === circles.length) {
+      next.disabled = true;
+    } else {
       next.disabled = false;
     }
   }
