@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   next.addEventListener("click", () => {
     currentActive++;
-
     if (currentActive > circles.length) {
       currentActive = circles.length;
     }
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   prev.addEventListener("click", () => {
     currentActive--;
-
     if (currentActive < 1) {
       currentActive = 1;
     }
@@ -37,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progress.style.width =
       ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
 
-    // Button state logic
+    // Update button states
     if (currentActive === 1) {
       prev.disabled = true;
     } else {
@@ -51,6 +49,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Initial call to set the correct state on page load
-  update();
+  update(); // Initial call to set the state
 });
